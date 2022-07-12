@@ -1,9 +1,34 @@
 #Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 def is_weekend(data):
-    return data == 6 or data == 7
+    if data > 7 or day < 0:
+        return 2
+    else:
+        return data == 6 or data == 7
 
-day = int(input())
+day = int(input('Введите номер дня недели на отрезке [1, 7]: '))
 if is_weekend(day) == 1:
-    print('Да')
+    print('Да, это выходной')
+elif is_weekend(day) > 1:
+    print('Вы ввели число не принадлежащее отрезку')
 else:
-    print('Нет')
+    print('Нет, это не выходной')
+
+#Напишите программу, которая принимает на вход координаты точки (X и Y), причём X ≠ 0 и Y ≠ 0 
+#и выдаёт номер четверти плоскости, в которой находится эта точка (или на какой оси она находится).
+
+def coord(numb_1, numb_2):
+    if numb_1 > 0 and numb_2 > 0:
+        print('I')
+    elif numb_1 < 0 and numb_2 > 0:
+        print('II')
+    elif numb_1 < 0 and numb_2 < 0:
+        print('III')
+    elif numb_1 > 0 and numb_2 < 0:
+        print('IV')
+    else:
+        print('Вы ввели координаты точки, которая не принадлежит ни одной четверти.')
+
+x = int(input('Введите значение координаты x: '))
+y = int(input('Введите значение координаты y: '))
+
+coord(x, y)
